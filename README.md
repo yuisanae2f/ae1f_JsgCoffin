@@ -2,6 +2,8 @@
 > C++ API for server, specifically for "a thread for a client" method.  
 > It is made of educational purpose. Keepest thy expectations for its perfomance.
 
+> Very Basic API for simple threading server.
+
 > It has no implementations. It is your goal to do it.
 
 ## Goal of this
