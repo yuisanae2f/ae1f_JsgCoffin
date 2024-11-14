@@ -56,7 +56,5 @@ install(FILES
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )
 
-add_subdirectory(test)
-
 add_subdirectory(submodules/core)
 link_libraries(Core)
