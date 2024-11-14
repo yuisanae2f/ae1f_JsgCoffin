@@ -6,6 +6,9 @@
 
 > It has no implementations. It is your goal to do it.
 
+## Initiation
+> Run the shell code to start first. (either on git bash or bash would work.)
+
 ## Goal of this
 > Make it run both under Windows and Linux.
 
