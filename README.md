@@ -8,23 +8,23 @@
 > Make it run both under Windows and Linux.
 
 ## Protocol
-> The protocol used for data transmission is Sequence, which is a 4-byte integer, Code, which is a 1-byte char, and Message Text, which is a 256-byte char array.
-> The codes used in the protocol are as follows.
-> Code 'N' Data request code Server A transmits one message when it receives a request for Code 'N'.
-> Code 'O' Message transmission code Server A uses Code 'O' when transmitting a message.
-> Code 'Q' Connection termination code Server B terminates all connections when it receives Code 'Q' from Server A.
-> We will use Server A, Server B, and 3 clients like this.
-> Server A will use the following in order when it receives Code 'N':
-> Sequence value 0, Code value O, Message Text "Hello everyone!"
-> Sequence value 1, Code value O, Message Text "Counting begins."
-> Sequence value 2, Code value O, Message Text "Three."
-> Sequence value 3, Code value O, Message Text "Two." 
-> Sequence value 4, Code value O, Message Text "One."
-> Sequence value 5, Code value O, Message Text "Zero"
-> Sequence value 5, Code value Q, Message Text "Zero"
-> Sends .
-> When Server B receives 3 clients, it sends Code 'N' to Server A until it receives Code 'Q', and then sends the value received from Server A to the client. However, the value received at this time should be sent to only one client.
-> Connections with 3 clients should be managed using Thread.
+> The protocol used for data transmission is Sequence, which is a 4-byte integer, Code, which is a 1-byte char, and Message Text, which is a 256-byte char array.  
+> The codes used in the protocol are as follows.  
+> Code 'N' Data request code Server A transmits one message when it receives a request for Code 'N'.  
+> Code 'O' Message transmission code Server A uses Code 'O' when transmitting a message.  
+> Code 'Q' Connection termination code Server B terminates all connections when it receives Code 'Q' from Server A.  
+> We will use Server A, Server B, and 3 clients like this.  
+> Server A will use the following in order when it receives Code 'N':  
+> Sequence value 0, Code value O, Message Text "Hello everyone!"  
+> Sequence value 1, Code value O, Message Text "Counting begins."  
+> Sequence value 2, Code value O, Message Text "Three."  
+> Sequence value 3, Code value O, Message Text "Two."   
+> Sequence value 4, Code value O, Message Text "One."  
+> Sequence value 5, Code value O, Message Text "Zero"  
+> Sequence value 5, Code value Q, Message Text "Zero"  
+> Sends .  
+> When Server B receives 3 clients, it sends Code 'N' to Server A until it receives Code 'Q', and then sends the value received from Server A to the client. However, the value received at this time should be sent to only one client.  
+> Connections with 3 clients should be managed using Thread.  
 
 # ae2f::Core
 - Rel-v1.2.10.5
